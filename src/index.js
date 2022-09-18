@@ -1,4 +1,9 @@
-import { greeting, getAnswerFromGamer, getQuestion, getAnswer } from './cli.js';
+import {
+  greeting,
+  getAnswerFromGamer,
+  getQuestion,
+  getAnswer,
+} from './cli.js';
 
 const game = (message) => (getData) => {
   const gamerName = greeting();
