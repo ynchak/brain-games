@@ -1,4 +1,4 @@
-import { greeting, getAnswerFromGamer } from './cli.js';
+import { greeting, getAnswerFromGamer, getQuestion, getAnswer } from './cli.js';
 
 const game = (message) => (getData) => {
   const gamerName = greeting();
@@ -6,7 +6,8 @@ const game = (message) => (getData) => {
   let step = 0;
   while (step < 3) {
     const data = getData();
-    const [question, correctAnswer] = data;
+    const question = getQuestion(data);
+    const correctAnswer = getAnswer(data);
     console.log(`Question: ${question}`);
     const gamerAnswer = getAnswerFromGamer();
     if (gamerAnswer !== correctAnswer) {

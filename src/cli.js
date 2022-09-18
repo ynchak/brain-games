@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import { cons, car, cdr } from '@hexlet/pairs';
 
 export const getRandomNumber = (max) => Math.floor(Math.random() * max);
 
@@ -10,3 +11,7 @@ export const greeting = () => {
 };
 
 export const getAnswerFromGamer = () => readlineSync.question('Your answer: ');
+
+export const make = (question, answer) => cons(String(question), String(answer));
+export const getQuestion = (pair) => car(pair);
+export const getAnswer = (pair) => cdr(pair);
